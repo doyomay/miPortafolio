@@ -24,14 +24,14 @@ module.exports = function(grunt) {
             },
             main:{
                 files:{
-                    'public/js/main.min.js':['src/js/*.js']
+                    'app/js/main.min.js':['src/js/*.js']
                 }
             }
         },
         browserSync:{
             dev:{
                 bsFiles:{
-                    src:['app/css/*.css', 'app/*.html', 'app/js/main.min.js']
+                    src:['app/css/*.css', 'app/**/*.html', 'app/js/main.min.js']
                 },
                 options:{
                     watchTask:true

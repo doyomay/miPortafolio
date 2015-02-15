@@ -1,1 +1,275 @@
 @import 'base/normalize'
+@import 'skin/skin'
+@import 'mixin/mixins'
+
+/* Iconos */
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.eot?dbfgbg');
+  src:url('fonts/icomoon.eot?#iefixdbfgbg') format('embedded-opentype'),
+  url('fonts/icomoon.woff?dbfgbg') format('woff'),
+  url('fonts/icomoon.ttf?dbfgbg') format('truetype'),
+  url('fonts/icomoon.svg?dbfgbg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  font-size 2em
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-google-plus2:before {
+  content: "\ea89";
+}
+
+.icon-facebook2:before {
+  content: "\ea8d";
+}
+
+.icon-instagram:before {
+  content: "\ea90";
+}
+
+.icon-twitter:before {
+  content: "\ea91";
+}
+
+.icon-github:before {
+  content: "\eab1";
+}
+
+.icon-tux:before {
+  content: "\eabe";
+}
+
+.icon-android:before {
+  content: "\eac1";
+}
+
+.icon-html5:before {
+  content: "\eadf";
+}
+
+.icon-css3:before {
+  content: "\eae1";
+}
+
+
+
+tamanio-item = 40px
+tamanioProfile = 10em
+tamanioSkill = 45px
+
+body
+  background fondo
+  font-family sans-serif
+  font-weight normal
+
+.Acerca
+  centrar()
+  &-descripcion
+    centrar()
+    color #fff
+    font-size 1.5em
+    max-width 787px
+
+.Contacto
+  centrar()
+
+.Cinta
+  background fondo_cintas
+  height 67px
+  line-height 67px
+  &-titulo
+    color letras_cinta
+    font-size 27px
+    text-transform uppercase
+
+.Habilidades
+  centrar()
+apotemaHabilidad =  sqrt( (tamanioSkill**2) - ((tamanioSkill/2)**2) )
+
+.Habilidad
+  margin-bottom 4em
+  margin-top 4em
+  &-activo
+    background skill_activo !important
+    &:before
+      border-bottom (apotemaHabilidad/2) solid skill_activo !important
+    &:after
+      border-top (apotemaHabilidad/2) solid skill_activo !important
+  &-contenedor
+    list-style none
+    margin 0
+    padding-left 0
+  &-item
+    &:first-child
+      margin-right 1em
+      color #fff
+      display inline-block
+      height (tamanioSkill+1)
+      font-size 1em
+      line-height (tamanioSkill)
+      position relative
+      text-align center
+      transform rotate(90deg)
+      vertical-align middle
+      width (apotemaHabilidad*2)
+      &:before,&:after
+        content ""
+        left 0
+        width 0
+        height 0
+        position absolute
+        border-left (apotemaHabilidad) solid transparent !important
+        border-right (apotemaHabilidad) solid transparent !important
+      &:before
+        top (apotemaHabilidad/-2)
+      &:after
+        bottom (apotemaHabilidad/-2)
+    &:first-child,&:last-child
+      background inherit
+      &:before
+        content ""
+        border none
+      &:after
+        content ""
+        border none
+    background skill_inactivo
+    color #fff
+    display inline-block
+    height (tamanioSkill)
+    font-size 1em
+    line-height (tamanioSkill)
+    margin-top (tamanioSkill/3)
+    margin-bottom (tamanioSkill/6)
+    margin-right -5px
+    position relative
+    text-align center
+    vertical-align middle
+    width (apotemaHabilidad*2)
+    i,p
+      padding 0
+      display block
+      transform rotate(-90deg)
+    p
+      padding-left 2em
+    &:before,&:after
+      content ""
+      left 0
+      width 0
+      height 0
+      position absolute
+      border-left (apotemaHabilidad) solid transparent
+      border-right (apotemaHabilidad) solid transparent
+    &:before
+      top (apotemaHabilidad/-2)
+      border-bottom (apotemaHabilidad/2) solid skill_inactivo
+    &:after
+      bottom (apotemaHabilidad/-2)
+      border-top (apotemaHabilidad/2) solid skill_inactivo
+[data-android]
+  background green!important
+  &:after
+    border-top (apotemaHabilidad/2) solid green!important
+  &:before
+    border-bottom (apotemaHabilidad/2) solid green!important
+[data-html5]
+  background html5!important
+  &:after
+    border-top (apotemaHabilidad/2) solid html5!important
+  &:before
+    border-bottom (apotemaHabilidad/2) solid html5!important
+[data-css3]
+  background css3!important
+  &:after
+    border-top (apotemaHabilidad/2) solid css3!important
+  &:before
+    border-bottom (apotemaHabilidad/2) solid css3!important
+[data-php]
+  background php!important
+  &:after
+    border-top (apotemaHabilidad/2) solid php!important
+  &:before
+    border-bottom (apotemaHabilidad/2) solid php!important
+[data-js]
+  background js!important
+  &:after
+    border-top (apotemaHabilidad/2) solid js!important
+  &:before
+    border-bottom (apotemaHabilidad/2) solid js!important
+
+.Header
+  margin-bottom 47px
+  text-align center
+  &-titulo
+    color letras_titulo
+    font-size 4em
+    margin-bottom 40px
+    margin-top 50px
+
+.Menu
+  &-contenedor
+    border-top 1px solid #fff
+    font-size 20px
+    centrar()
+    margin-top 0
+    margin-bottom 0
+    padding 0
+    width 510px
+  &-item
+    display inline-block
+    height tamanio-item
+    margin-right 20px
+    text-align center
+    &:last-child
+      margin-right 0
+  &-link
+    color letras
+    display inline-block
+    height tamanio-item
+    line-height tamanio-item
+    text-decoration none
+    text-transform uppercase
+    &:hover
+      border-top 3px solid letras_hover
+      color letras_hover
+      height tamanio-item - 5
+      line-height tamanio-item - 5
+
+.Profile
+  apotema =  sqrt( (tamanioProfile**2) - ((tamanioProfile/2)**2) )
+  centrar()
+  background borde_perfil
+  height tamanioProfile
+  margin-top (tamanioProfile/2)
+  margin-bottom (tamanioProfile/2.5)
+  position relative
+  width (apotema*2)
+  &:before,&:after
+    content ""
+    left 0
+    width 0
+    height 0
+    position absolute
+    border-left apotema solid transparent
+    border-right apotema solid transparent
+  &:before
+    top (apotema/ -2)
+    border-bottom (apotema/2) solid borde_perfil
+  &:after
+    bottom (apotema/ -2)
+    border-top (apotema/2) solid borde_perfil
+  &-imagen
+    width (apotema)
